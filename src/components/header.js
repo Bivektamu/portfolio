@@ -1,35 +1,75 @@
 import * as React from "react"
 import PropTypes from "prop-types"
+
+import { FaMobileAlt } from 'react-icons/fa';
+
+import { Container } from "../../styles/globalStyles"
+import { Logo, NavMenu } from "../../styles/headerStyles"
+
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+const Header = () => (
+
+  <header id="header" class="header_area">
+
+    <Container>
+      <Logo>
+            <Link to='/'>BIV</Link>
+             
+            <span></span>
+
+            <Link to='/'>EK</Link>
+        </Logo>
+
+      {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> */}
+
+      <NavMenu>
+        <ul>
+          <li className="active">
+            <a className="nav-link" href="#home">home</a>
+          </li>
+
+          <li>
+            <a className="nav-link" href="#about">about</a>
+          </li>
+
+          <li>
+            <a className="nav-link" href="#skills">skills</a>
+          </li>
+
+          <li>
+            <a className="nav-link" href="#projects">projects</a>
+          </li>
+
+          <li>
+            <a className="nav-link" href="#contact">contact</a>
+          </li>
+
+          <li>
+            <a className="nav-link hvr-buzz-out tel" id="mob-tel" href="tel:+61452424565">
+                <FaMobileAlt />
+            </a>
+          </li>
+        </ul>
+            
+            
+
+            
+        </NavMenu>
+    
+        </Container>
+
+
+
+
   </header>
-)
+
+
+  
+  )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

@@ -10,22 +10,37 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+import {createGlobalStyle} from 'styled-components'
+import {normalize} from 'styled-normalize'
+
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
+
+
+  const GlobalStyles = createGlobalStyle`
+  /* ${normalize}   */
+  * {
+      text-decoration: none;
     }
-  `)
+
+    html {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      font-size: 10px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      background: #fff;
+      margin:0;
+    }
+    `
+
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+    <GlobalStyles />
+      <Header />
       <div
         style={{
           margin: `0 auto`,
