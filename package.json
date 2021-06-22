@@ -3,7 +3,7 @@
   "private": true,
   "description": "Bivek Jang Gurung Portfolio",
   "version": "0.1.0",
-  "author": "Bivek Jang Gurung <bivek.tamu@gmail.com>",
+  "author": "Bivek Jang Gurung, <bivek.tamu@gmail.com>",
   "dependencies": {
     "gatsby": "^3.6.2",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
