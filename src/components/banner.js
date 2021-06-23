@@ -18,7 +18,7 @@ const Banner = () => (
                     <div className="grid__6 site__title">
                         <H3>Hey</H3>
                         <H1>I am Bivek</H1>
-                        <H4>Front End Developer</H4>
+                        <H4 style={{marginBottom: "40px"}}>Front End Developer</H4>
                         <Btn>
                             <a href="tel:0452424565">
                                 hire me

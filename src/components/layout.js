@@ -36,13 +36,17 @@ const Layout = ({ children }) => {
       background: #fff;
       margin:0;
       font-weight: 400;
+      font-size: 1.6rem;
+      color:#777777;
+      line-height: 1.4;
     }
     
-    h1, h3, h4{
+    h1, h2, h3, h4{
       font-weight: 500;
       margin: 0;
       margin-bottom: 10px;
       line-height:1.2;
+      color:#212529;
     }
 
     `
@@ -52,13 +56,7 @@ const Layout = ({ children }) => {
     <>
     <GlobalStyles />
       <Header />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+     
         <main>{children}</main>
         <footer
           style={{
@@ -69,7 +67,6 @@ const Layout = ({ children }) => {
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
-      </div>
     </>
   )
 }
