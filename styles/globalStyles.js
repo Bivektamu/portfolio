@@ -22,6 +22,9 @@ export const Flex = styled.div`
   &.row__reverse {
     flex-direction: row-reverse;
   }
+  &.flex__wrap {
+    flex-wrap: wrap;
+  }
 `
 
 export const H1= styled.h1`
@@ -48,8 +51,14 @@ export const H4= styled.h4`
       font-weight:700;
 `
 
+export const H5= styled.h5`
+           font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight:700;
+`
+
 export const Btn = styled.div`
-  padding: 15px 0;
+    padding: 15px 0;
     position: relative;
     border-radius: 4px;
     transition: all 0.3s ease;
@@ -59,12 +68,12 @@ export const Btn = styled.div`
     background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
     background-clip: padding-box;
     box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
-    display: flex;
-    justify-content: center;
     a {
       color:#fff;
       text-transform: uppercase;
       font-size: 1.5rem;
       font-weight: 500;
+      display: block;
+      text-align:center;
     }
 `

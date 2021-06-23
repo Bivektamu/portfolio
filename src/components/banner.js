@@ -1,7 +1,4 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-
-import { FaMobileAlt } from 'react-icons/fa';
 
 import { Container, Flex, H1, H3, H4, Btn } from "../../styles/globalStyles"
 import { BannerSection } from "../../styles/bannerStyles"

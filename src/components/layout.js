@@ -7,7 +7,6 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import {createGlobalStyle} from 'styled-components'
@@ -18,7 +17,6 @@ const Layout = ({ children }) => {
 
 
   const GlobalStyles = createGlobalStyle`
-/* @import url("https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700&display=swap"); */
 
   ${normalize}  
   * {
@@ -41,12 +39,16 @@ const Layout = ({ children }) => {
       line-height: 1.4;
     }
     
-    h1, h2, h3, h4{
+    h1, h2, h3, h4, h5{
       font-weight: 500;
       margin: 0;
       margin-bottom: 10px;
       line-height:1.2;
       color:#212529;
+    }
+
+    .grid__4 {
+      width: calc(33.33% - 20px);
     }
 
     `

@@ -1,12 +1,13 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 
-import { FaMobileAlt } from 'react-icons/fa';
+import { FaMobileAlt } from "@react-icons/all-files/fa/FaMobileAlt";
 
 import { Container } from "../../styles/globalStyles"
 import { Logo, NavMenu } from "../../styles/headerStyles"
 
 import { Link } from "gatsby"
+
 
 const Header = () => (
 
@@ -50,7 +51,7 @@ const Header = () => (
 
           <li>
             <a className="nav-link hvr-buzz-out tel" id="mob-tel" href="tel:+61452424565">
-                <FaMobileAlt />
+              <FaMobileAlt />
             </a>
           </li>
         </ul>
