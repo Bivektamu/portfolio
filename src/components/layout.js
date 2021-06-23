@@ -18,7 +18,9 @@ const Layout = ({ children }) => {
 
 
   const GlobalStyles = createGlobalStyle`
-  /* ${normalize}   */
+/* @import url("https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700&display=swap"); */
+
+  ${normalize}  
   * {
       text-decoration: none;
     }
@@ -30,10 +32,19 @@ const Layout = ({ children }) => {
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family:'Poppins';
       background: #fff;
       margin:0;
+      font-weight: 400;
     }
+    
+    h1, h3, h4{
+      font-weight: 500;
+      margin: 0;
+      margin-bottom: 10px;
+      line-height:1.2;
+    }
+
     `
 
 

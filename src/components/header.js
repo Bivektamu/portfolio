@@ -10,7 +10,7 @@ import { Link } from "gatsby"
 
 const Header = () => (
 
-  <header id="header" class="header_area">
+  <header id="header" className="header_area">
 
     <Container>
       <Logo>
@@ -21,9 +21,9 @@ const Header = () => (
             <Link to='/'>EK</Link>
         </Logo>
 
-      {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      {/* <button classname="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span classname="navbar-toggler-icon"></span>
             </button> */}
 
       <NavMenu>

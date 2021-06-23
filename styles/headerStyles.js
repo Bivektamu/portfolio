@@ -42,6 +42,7 @@ export const NavMenu = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 4rem 0;
+     margin:0;
 
     li {
       list-style: none;
@@ -50,7 +51,8 @@ export const NavMenu = styled.nav`
         text-transform: uppercase;
         line-height: 1;
         color: #141313;
-        font-weight: bold;
+        font-size: 1.5rem;
+        font-weight: 500;
 
         &.tel {
           svg {
