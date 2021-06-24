@@ -23,6 +23,57 @@ export const SkillSection = styled.section`
         .skill__icon{
             width: 60%;
         }
+
+        &:hover {
+            box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+            transform: scale(1.1);
+        }
+
+
+    }
+
+`
+
+export const ExperienceWrapper = styled.section`
+    padding: 40px;
+    background: #e029290a;
+    width: 350px;
+    display: block;
+    margin:0;
+    margin-left: auto;
+    .years__area {
+        margin-bottom: 100px;
+        position: relative;
+
+        h1 {
+            color: #854fee;
+            sup {
+                top:-0.5em
+            }
+
+        }
+
+        h2 {
+            font-weight: normal;
+            text-transform: capitalize;
+            span {
+                display: block;
+            }
+        }
+    }
+
+    .call__now {
+        svg {
+            width: 48px;
+            height: auto;
+            margin: 0 16px;
+            path {
+                fill: #212529;
+            }
+        }
+        h4 {
+            font-weight: normal;
+        }
     }
 
 `

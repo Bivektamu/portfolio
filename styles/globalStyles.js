@@ -25,6 +25,10 @@ export const Flex = styled.div`
   &.flex__wrap {
     flex-wrap: wrap;
   }
+
+  &.align__top {
+    align-items: flex-start;
+  }
 `
 
 export const H1= styled.h1`

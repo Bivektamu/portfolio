@@ -23,7 +23,7 @@ const Project = () => (
 
                             <div className="link-wrapper">
                               <Btn>
-                                <a target="_blank" href="https://github.com/Bivektamu/Restaurant-Webapp-V2">
+                                <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/Restaurant-Webapp-V2">
                                   View Code&nbsp;&nbsp;
                                   <AiFillGithub />
                                 </a>
@@ -31,7 +31,7 @@ const Project = () => (
                               </Btn>
 
                               <Btn>
-                                  <a target="_blank" href="https://restaurantapp.netlify.app/">
+                                  <a target="_blank" rel="noreferrer" href="https://restaurantapp.netlify.app/">
                                     View Live&nbsp;&nbsp;
                                     <FaLink />
                                   </a>
@@ -49,7 +49,7 @@ const Project = () => (
 
                             <div className="link-wrapper">
                               <Btn>
-                                <a target="_blank" href="https://github.com/Bivektamu/devlinked">
+                                <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/devlinked">
                                   View Code&nbsp;&nbsp;
                                   <AiFillGithub />
                                 </a>
@@ -57,7 +57,7 @@ const Project = () => (
                               </Btn>
 
                               <Btn>
-                                  <a target="_blank" href="http://devlinked.herokuapp.com/">
+                                  <a target="_blank" rel="noreferrer" href="http://devlinked.herokuapp.com/">
                                     View Live&nbsp;&nbsp;
                                     <FaLink />
                                   </a>
@@ -74,7 +74,7 @@ const Project = () => (
 
                             <div className="link-wrapper">
                               <Btn>
-                                <a target="_blank" href="https://github.com/Bivektamu/amazon-clone">
+                                <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/amazon-clone">
                                   View Code&nbsp;&nbsp;
                                   <AiFillGithub />
                                 </a>
@@ -82,7 +82,7 @@ const Project = () => (
                               </Btn>
 
                               <Btn>
-                                  <a target="_blank" href="https://clone-ca2ec.web.app/">
+                                  <a target="_blank" rel="noreferrer" href="https://clone-ca2ec.web.app/">
                                     View Live&nbsp;&nbsp;
                                     <FaLink />
                                   </a>
@@ -99,7 +99,7 @@ const Project = () => (
 
                             <div className="link-wrapper">
                               <Btn>
-                                <a target="_blank" href="https://github.com/Bivektamu/netflix-clone">
+                                <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/netflix-clone">
                                   View Code&nbsp;&nbsp;
                                   <AiFillGithub />
                                 </a>
@@ -107,7 +107,7 @@ const Project = () => (
                               </Btn>
 
                               <Btn>
-                                  <a target="_blank" href="https://clone-ca2ec.web.app/">
+                                  <a target="_blank" rel="noreferrer" href="https://clone-ca2ec.web.app/">
                                     View Live&nbsp;&nbsp;
                                     <FaLink />
                                   </a>
@@ -125,7 +125,7 @@ const Project = () => (
 
                             <div className="link-wrapper">
                               <Btn>
-                                <a target="_blank" href="https://github.com/Bivektamu/real-estate">
+                                <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/real-estate">
                                   View Code&nbsp;&nbsp;
                                   <AiFillGithub />
                                 </a>
@@ -133,7 +133,7 @@ const Project = () => (
                               </Btn>
 
                               <Btn>
-                                  <a target="_blank" href="https://realestate-reactproject.netlify.app/">
+                                  <a target="_blank" rel="noreferrer" href="https://realestate-reactproject.netlify.app/">
                                     View Live&nbsp;&nbsp;
                                     <FaLink />
                                   </a>
@@ -151,7 +151,7 @@ const Project = () => (
 
                             <div className="link-wrapper">
                               <Btn>
-                                <a target="_blank" href="https://github.com/Bivektamu/eshop">
+                                <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/eshop">
                                   View Code&nbsp;&nbsp;
                                   <AiFillGithub />
                                 </a>
@@ -159,7 +159,7 @@ const Project = () => (
                               </Btn>
 
                               <Btn>
-                                  <a target="_blank" href="https://mobilestore-reactproject.netlify.app/">
+                                  <a target="_blank" rel="noreferrer" href="https://mobilestore-reactproject.netlify.app/">
                                     View Live&nbsp;&nbsp;
                                     <FaLink />
                                   </a>
