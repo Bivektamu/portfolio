@@ -39,8 +39,8 @@ export const ExperienceWrapper = styled.section`
     background: #e029290a;
     width: 350px;
     display: block;
-    margin:0;
-    margin-left: auto;
+    margin-left:10vw;
+    /* margin-left: auto; */
     .years__area {
         margin-bottom: 100px;
         position: relative;
@@ -62,7 +62,8 @@ export const ExperienceWrapper = styled.section`
         }
     }
 
-    .call__now {
+    .call__area {
+        width: 205px;
         svg {
             width: 48px;
             height: auto;
@@ -72,7 +73,11 @@ export const ExperienceWrapper = styled.section`
             }
         }
         h4 {
-            font-weight: normal;
+            font-weight: 500;
+        }
+        .call__now a {
+            font-weight: 500;
+            color:#007bff;
         }
     }
 
