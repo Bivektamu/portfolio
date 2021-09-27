@@ -30,7 +30,7 @@ const Contact = () => {
             const secTop = secRef.offsetTop
             const secH = secRef.getBoundingClientRect().height
             const headerH = document.getElementById('header').getBoundingClientRect().height
-            const scrolledVal = window.scrollY + headerH
+            const scrolledVal = window.scrollY + headerH + 10
 
             if (scrolledVal > secTop && scrolledVal < secTop + secH) {
                 setflag(true)

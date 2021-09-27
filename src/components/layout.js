@@ -12,6 +12,8 @@ import Header from "./header"
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
 
+import CustomCursor from '../components/customCursor'
+
 
 const Layout = ({ children }) => {
 
@@ -21,6 +23,7 @@ const Layout = ({ children }) => {
   ${normalize}  
   * {
       text-decoration: none;
+      /* cursor: none; */
     }
 
     html {
@@ -54,10 +57,6 @@ const Layout = ({ children }) => {
     main {
       overflow:hidden;
     }
-
-    section.active {
-      background: red;
-    }
     `
 
 
@@ -65,6 +64,8 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles />
       <Header />
+      <CustomCursor />
+
 
       <main>{children}</main>
 
