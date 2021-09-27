@@ -9,8 +9,8 @@ import * as React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
-import {createGlobalStyle} from 'styled-components'
-import {normalize} from 'styled-normalize'
+import { createGlobalStyle } from 'styled-components'
+import { normalize } from 'styled-normalize'
 
 
 const Layout = ({ children }) => {
@@ -51,24 +51,23 @@ const Layout = ({ children }) => {
       width: calc(33.33% - 20px);
     }
 
+    main {
+      overflow:hidden;
+    }
+
+    section.active {
+      background: red;
+    }
     `
 
 
   return (
     <>
-    <GlobalStyles />
+      <GlobalStyles />
       <Header />
-     
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+
+      <main>{children}</main>
+
     </>
   )
 }

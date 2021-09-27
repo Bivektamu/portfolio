@@ -1,10 +1,23 @@
 import styled from 'styled-components'
 
 
-export const Header = styled.header`
-  &>div {
+export const HeaderWrapper = styled.header`
+  
+    position: fixed;
+    left:0;
+    top:0;
+    right:0;
+    background:#fff;
+    z-index:9;
+
+    &.fixed {
+      box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+    }
+
+    &>div {
     position: relative;
   }
+
 `
 
 export const Logo = styled.div`
@@ -69,4 +82,3 @@ export const NavMenu = styled.nav`
   }
 
 `
-  
