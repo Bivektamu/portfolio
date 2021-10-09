@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 
 
 import { Btn, Container, Flex, H2, H5 } from "../../styles/globalStyles"
@@ -8,10 +8,14 @@ import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub"
 import { FaLink } from "@react-icons/all-files/fa/FaLink";
 
 import { StaticImage } from "gatsby-plugin-image"
+import GlobalContext from "../context"
+
+
 
 const Project = () => {
 
-
+  const { settings, setSettings } = useContext(GlobalContext)
+  const { loading } = settings
 
   const [flag, setflag] = useState(false)
 
@@ -49,7 +53,7 @@ const Project = () => {
 
     return () => { document.removeEventListener('scroll', scrolled) }
 
-  }, [])
+  }, [loading])
 
   return (
 

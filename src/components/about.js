@@ -1,13 +1,19 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 
 import { Container, Flex, H2 } from "../../styles/globalStyles"
 import { AboutSection } from "../../styles/aboutStyles"
 
 import { StaticImage } from "gatsby-plugin-image"
 
+import GlobalContext from "../context"
+
+
 const About = () => {
 
   const [flag, setflag] = useState(false)
+
+  const { settings, setSettings } = useContext(GlobalContext)
+  const { loading } = settings
 
   useEffect(() => {
 
@@ -18,18 +24,14 @@ const About = () => {
     const indexOfSec = (Array.from(secRef.parentNode.children).indexOf(secRef))
 
     const nav = document.getElementById('nav')
-
     const navItem = (nav.childNodes[indexOfSec])
 
+    console.log(navItem)
 
     const headerH = document.getElementById('header').getBoundingClientRect().height
 
 
-
-
     function scrolled() {
-
-
 
       const secTop = secRef.offsetTop
       const secH = secRef.getBoundingClientRect().height
@@ -51,7 +53,7 @@ const About = () => {
 
     return () => { document.removeEventListener('scroll', scrolled) }
 
-  }, [])
+  }, [loading])
 
 
   return (

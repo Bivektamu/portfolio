@@ -66,6 +66,10 @@ export const NavMenu = styled.nav`
         color: #141313;
         font-size: 1.5rem;
         font-weight: 500;
+        &:hover {
+        color: #854fee;
+
+        }
 
         &.tel {
           svg {

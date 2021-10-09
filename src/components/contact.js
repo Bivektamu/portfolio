@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 
 import { ContactSection } from '../../styles/contactStyles'
 import { Container, H2 } from '../../styles/globalStyles'
@@ -10,9 +10,16 @@ import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin'
 import { FaGithub } from '@react-icons/all-files/fa/FaGithub'
 
+import { ExternalLink } from 'react-external-link';
+
+import GlobalContext from "../context"
+
 const Contact = () => {
 
     const [flag, setflag] = useState(false)
+    const { settings, setSettings } = useContext(GlobalContext)
+
+    const { loading } = settings
 
     useEffect(() => {
 
@@ -46,7 +53,7 @@ const Contact = () => {
 
         return () => { document.removeEventListener('scroll', scrolled) }
 
-    }, [])
+    }, [loading])
 
 
     return (
@@ -57,19 +64,22 @@ const Contact = () => {
 
                 <div className="social">
                     <H2>Contact</H2>
-                    <Link className='fb' to="https://www.facebook.com/bivek.tamu.5" target="_blank"><FaFacebook /></Link>
 
-                    <Link className='gmail' to="mailto:bivek.tamu@gmail.com">
+                    <ExternalLink className='fb' href="https://www.facebook.com/bivek.tamu.5">
+                        <FaFacebook />
+                    </ExternalLink>
+
+                    <ExternalLink className='gmail' href="mailto:bivek.tamu@gmail.com">
                         <SiGmail />
-                    </Link>
+                    </ExternalLink>
 
-                    <Link className='linkedin' to="https://www.linkedin.com/in/bivek-gurung-b4602a62/" target="_blank">
+                    <ExternalLink className='linkedin' href="https://www.linkedin.com/in/bivek-gurung-b4602a62/">
                         <FaLinkedin />
-                    </Link>
+                    </ExternalLink>
 
-                    <Link className='github' to="https://github.com/bivektamu/" target="_blank">
+                    <ExternalLink className='github' href="https://github.com/bivektamu/">
                         <FaGithub />
-                    </Link>
+                    </ExternalLink>
                 </div>
             </Container>
         </ContactSection >

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
 import { FaMobileAlt } from "@react-icons/all-files/fa/FaMobileAlt";
@@ -8,18 +8,24 @@ import { HeaderWrapper, Logo, NavMenu } from "../../styles/headerStyles"
 
 import { Link } from "gatsby"
 
-import GlobalContext from "../context"
+import NavItem from './NavItem'
 
 
 
 const Header = () => {
 
+
   const [clsnme, setClsnme] = useState('');
 
-  const { settings, setSettings } = useContext(GlobalContext)
 
+  const [sections, setSections] = useState([])
 
   useEffect(() => {
+
+    const secs = document.querySelectorAll('main > section')
+
+    setSections(Array.prototype.slice.call(secs))
+
 
     document.addEventListener('scroll', scrolling)
 
@@ -30,26 +36,29 @@ const Header = () => {
       else {
         setClsnme('')
       }
+
     }
 
-    return () => { window.removeEventListener('scroll', scrolling) }
+    return () => {
+      window.removeEventListener('scroll', scrolling)
+
+    }
   }, [])
 
-  const onClick = (e) => {
-    e.preventDefault()
-
-    const item = (e.target)
-
-    const anchor = (item.getAttribute('data-anchor'))
-
-    const sec = document.getElementById(anchor)
 
 
-    window.scrollTo({
-      top: sec.offsetTop - document.getElementById('header').getBoundingClientRect().height,
-      // left: 100,
-      behavior: 'smooth'
-    });
+  let navItem;
+  if (sections.length > 0) {
+    navItem = sections.map((sec, index) => {
+      const secId = (sec.getAttribute('id'))
+      if (secId) {
+
+        return <NavItem key={index} index={index} max={sections.length} anchorTo={secId} />
+      }
+      else {
+        return ''
+      }
+    })
   }
 
   return (
@@ -71,32 +80,7 @@ const Header = () => {
 
         <NavMenu>
           <ul id="nav">
-            <li className="active">
-              <Link to="#home" className="nav-link" data-anchor="home" onClick={(e) => onClick(e)}
-                onMouseEnter={() => setSettings({ cursor: 'hovered' })}
-                onMouseLeave={() => setSettings({ cursor: '' })}
-              >home</Link>
-            </li>
-
-            <li>
-              <Link to="#about" className="nav-link" data-anchor="about" onClick={(e) => onClick(e)}
-                onMouseEnter={() => console.log(settings)}
-                onMouseLeave={() => console.log(settings)}
-              >about</Link>
-            </li>
-
-            <li>
-              <Link to="#project" className="nav-link" data-anchor="project" onClick={(e) => onClick(e)}>projects</Link>
-            </li>
-
-            <li>
-              <Link to="#skill" className="nav-link" data-anchor="skill" onClick={(e) => onClick(e)}>skills</Link>
-            </li>
-
-            <li>
-              <Link to="#contact" className="nav-link" data-anchor="contact" onClick={(e) => onClick(e)}>contact</Link>
-            </li>
-
+            {navItem && navItem}
             <li>
               <a className="nav-link hvr-buzz-out tel" id="mob-tel" href="tel:+61452424565">
                 <FaMobileAlt />

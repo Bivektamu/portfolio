@@ -13,14 +13,13 @@ const Layout = ({ children }) => {
 
   const [settings, setSettings] = useState({
     cursor: '',
+    loading: true,
   })
 
   const value = useMemo(
     () => ({ settings, setSettings }),
     [settings]
   )
-
-
   const GlobalStyles = createGlobalStyle`
 
   ${normalize}  
@@ -62,7 +61,7 @@ const Layout = ({ children }) => {
     }
     `
 
-
+  // console.clear()
   return (
     <GlobalContext.Provider value={value}>
       <GlobalStyles />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 
 import { Container, Flex, H2, H1, H4 } from "../../styles/globalStyles"
 import { SkillSection, ExperienceWrapper } from "../../styles/skillStyles"
@@ -6,8 +6,11 @@ import { SkillSection, ExperienceWrapper } from "../../styles/skillStyles"
 import { ImPhone } from "@react-icons/all-files/im/ImPhone";
 
 import { StaticImage } from "gatsby-plugin-image"
+import GlobalContext from "../context"
 
 const Skill = () => {
+  const { settings, setSettings } = useContext(GlobalContext)
+  const { loading } = settings
 
   const [flag, setflag] = useState(false)
 
@@ -45,7 +48,7 @@ const Skill = () => {
 
     return () => { document.removeEventListener('scroll', scrolled) }
 
-  }, [])
+  }, [loading])
 
 
 

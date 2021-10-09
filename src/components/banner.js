@@ -1,13 +1,22 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 
 import { Container, Flex, H1, H3, H4, Btn } from "../../styles/globalStyles"
 import { BannerSection } from "../../styles/bannerStyles"
 
 import { StaticImage } from "gatsby-plugin-image"
 
+import GlobalContext from "../context"
+
+
+
 const Banner = () => {
 
+    const { settings, setSettings } = useContext(GlobalContext)
+
+
     const [flag, setflag] = useState(true)
+
+    const { loading } = settings
 
     useEffect(() => {
 
@@ -44,7 +53,7 @@ const Banner = () => {
 
         return () => { document.removeEventListener('scroll', scrolled) }
 
-    }, [])
+    }, [loading])
 
 
     return (
