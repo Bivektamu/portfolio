@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 
 import { Cursor } from '../../styles/cursorStyles'
 
+import GlobalContext from '../context'
+
 const CustomCursor = () => {
 
+    const { settings } = useContext(GlobalContext)
     const [cordPos, setCordPos] = useState({ x: 20, y: 0 })
 
     useEffect(() => {
@@ -19,7 +22,7 @@ const CustomCursor = () => {
 
     const { x, y } = cordPos
     return (
-        <Cursor style={{ left: x, top: y }} />
+        <Cursor className={settings.cursor} style={{ left: x, top: y }} />
     )
 }
 

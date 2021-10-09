@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import PropTypes from "prop-types"
 
 import { FaMobileAlt } from "@react-icons/all-files/fa/FaMobileAlt";
@@ -8,20 +8,20 @@ import { HeaderWrapper, Logo, NavMenu } from "../../styles/headerStyles"
 
 import { Link } from "gatsby"
 
+import GlobalContext from "../context"
+
 
 
 const Header = () => {
 
-  const headerRef = useRef(null);
-
   const [clsnme, setClsnme] = useState('');
 
+  const { settings, setSettings } = useContext(GlobalContext)
 
 
   useEffect(() => {
 
     document.addEventListener('scroll', scrolling)
-
 
     function scrolling() {
       if (window.scrollY > 0) {
@@ -53,7 +53,7 @@ const Header = () => {
   }
 
   return (
-    <HeaderWrapper id="header" className={`${'header ' + clsnme}`}>
+    <HeaderWrapper id="header" className={`${'header ' + clsnme}`} >
 
       <Container>
         <Logo>
@@ -72,11 +72,17 @@ const Header = () => {
         <NavMenu>
           <ul id="nav">
             <li className="active">
-              <Link to="#home" className="nav-link" data-anchor="home" onClick={(e) => onClick(e)}>home</Link>
+              <Link to="#home" className="nav-link" data-anchor="home" onClick={(e) => onClick(e)}
+                onMouseEnter={() => setSettings({ cursor: 'hovered' })}
+                onMouseLeave={() => setSettings({ cursor: '' })}
+              >home</Link>
             </li>
 
             <li>
-              <Link to="#about" className="nav-link" data-anchor="about" onClick={(e) => onClick(e)}>about</Link>
+              <Link to="#about" className="nav-link" data-anchor="about" onClick={(e) => onClick(e)}
+                onMouseEnter={() => console.log(settings)}
+                onMouseLeave={() => console.log(settings)}
+              >about</Link>
             </li>
 
             <li>
@@ -108,7 +114,7 @@ const Header = () => {
 
 
 
-    </HeaderWrapper>
+    </HeaderWrapper >
   )
 }
 

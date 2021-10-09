@@ -1,11 +1,4 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import * as React from "react"
+import React, { createContext, useState, useMemo } from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
@@ -14,8 +7,18 @@ import { normalize } from 'styled-normalize'
 
 import CustomCursor from '../components/customCursor'
 
+import GlobalContext from "../context"
 
 const Layout = ({ children }) => {
+
+  const [settings, setSettings] = useState({
+    cursor: '',
+  })
+
+  const value = useMemo(
+    () => ({ settings, setSettings }),
+    [settings]
+  )
 
 
   const GlobalStyles = createGlobalStyle`
@@ -61,15 +64,14 @@ const Layout = ({ children }) => {
 
 
   return (
-    <>
+    <GlobalContext.Provider value={value}>
       <GlobalStyles />
       <Header />
       <CustomCursor />
 
-
       <main>{children}</main>
 
-    </>
+    </GlobalContext.Provider>
   )
 }
 
