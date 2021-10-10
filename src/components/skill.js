@@ -70,42 +70,50 @@ const Skill = () => {
                   <StaticImage src="../images/skills/react_redux.png" alt="react + redux icon" className="skill__icon" />
                 </div>
               </div>
+
               <div className="grid__4">
                 <div className="single__brand">
                   <StaticImage src="../images/skills/javascript.png" alt="javascript icon" className="skill__icon" />
                 </div>
               </div>
+
               <div className="grid__4">
                 <div className="single__brand">
                   <StaticImage src="../images/skills/jquery.png" alt="jquery icon" className="skill__icon" />
                 </div>
               </div>
+
               <div className="grid__4">
                 <div className="single__brand">
                   <StaticImage src="../images/skills/html.png" alt="html icon" className="skill__icon" />
                 </div>
               </div>
+
               <div className="grid__4">
                 <div className="single__brand">
                   <StaticImage src="../images/skills/css.png" alt="css icon" className="skill__icon" />
                 </div>
               </div>
+
               <div className="grid__4">
                 <div className="single__brand">
                   <StaticImage src="../images/skills/sass.png" alt="sass icon" className="skill__icon" />
                 </div>
               </div>
 
+
               <div className="grid__4">
                 <div className="single__brand">
                   <StaticImage src="../images/skills/mongodb.png" alt="mongodb icon" className="skill__icon" />
                 </div>
               </div>
+
               <div className="grid__4">
                 <div className="single__brand">
                   <StaticImage src="../images/skills/rest.png" alt="rest icon" className="skill__icon" />
                 </div>
               </div>
+
               <div className="grid__4">
                 <div className="single__brand">
                   <StaticImage src="../images/skills/git.png" alt="git icon" className="skill__icon" />

@@ -8,11 +8,16 @@ export const SkillSection = styled.section`
     align-items: center;
     padding: 50px 0;
 
+    .flex__wrap {
+        max-width: 800px
+    }
     .single__brand {
-        border: 1px solid #201f1f17;
+        /* border: 1px solid #201f1f17; */
+        border: 1px solid #fff;
+        background: #fff;
         text-align: center;
-        padding: 1.8rem 0rem;
-        margin: 0.9rem 0;
+        padding: 15px 0;
+        margin: 20px 0;
         width: 180px;
         height: 100px;
         cursor: pointer;
@@ -25,7 +30,7 @@ export const SkillSection = styled.section`
         }
 
         &:hover {
-            box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+            box-shadow: ${props => props.theme.boxShadow};
             transform: scale(1.1);
         }
 

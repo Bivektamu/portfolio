@@ -26,8 +26,6 @@ const About = () => {
     const nav = document.getElementById('nav')
     const navItem = (nav.childNodes[indexOfSec])
 
-    console.log(navItem)
-
     const headerH = document.getElementById('header').getBoundingClientRect().height
 
 
@@ -56,9 +54,11 @@ const About = () => {
   }, [loading])
 
 
+  const classNm = flag ? 'active' : ''
+
   return (
 
-    <AboutSection id='about' className={flag && 'active'}>
+    <AboutSection id='about' className={classNm}>
 
       <Container>
         <Flex className="row__reverse">

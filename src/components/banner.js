@@ -7,6 +7,8 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import GlobalContext from "../context"
 
+import { ExternalLink } from 'react-external-link'
+
 
 
 const Banner = () => {
@@ -68,9 +70,13 @@ const Banner = () => {
                         <H1>I am Bivek</H1>
                         <H4 style={{ marginBottom: "40px" }}>Front End Developer</H4>
                         <Btn>
-                            <a href="tel:0452424565">
+                            {/* setSettings */}
+                            <ExternalLink
+                                onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                                onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                                href="tel:0452424565">
                                 hire me
-                            </a>
+                            </ExternalLink>
                         </Btn>
                     </div>
 

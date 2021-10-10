@@ -10,6 +10,7 @@ import { FaLink } from "@react-icons/all-files/fa/FaLink";
 import { StaticImage } from "gatsby-plugin-image"
 import GlobalContext from "../context"
 
+import { ExternalLink } from 'react-external-link'
 
 
 const Project = () => {
@@ -70,18 +71,24 @@ const Project = () => {
 
               <div className="link-wrapper">
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/Restaurant-Webapp-V2">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/Restaurant-Webapp-V2">
                     View Code&nbsp;&nbsp;
                     <AiFillGithub />
-                  </a>
+                  </ExternalLink>
 
                 </Btn>
 
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://restaurantapp.netlify.app/">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://restaurantapp.netlify.app/">
                     View Live&nbsp;&nbsp;
                     <FaLink />
-                  </a>
+                  </ExternalLink>
                 </Btn>
               </div>
 
@@ -96,18 +103,24 @@ const Project = () => {
 
               <div className="link-wrapper">
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/devlinked">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/devlinked">
                     View Code&nbsp;&nbsp;
                     <AiFillGithub />
-                  </a>
+                  </ExternalLink>
 
                 </Btn>
 
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="http://devlinked.herokuapp.com/">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="http://devlinked.herokuapp.com/">
                     View Live&nbsp;&nbsp;
                     <FaLink />
-                  </a>
+                  </ExternalLink>
                 </Btn>
               </div>
 
@@ -121,18 +134,24 @@ const Project = () => {
 
               <div className="link-wrapper">
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/amazon-clone">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/amazon-clone">
                     View Code&nbsp;&nbsp;
                     <AiFillGithub />
-                  </a>
+                  </ExternalLink>
 
                 </Btn>
 
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://clone-ca2ec.web.app/">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://clone-ca2ec.web.app/">
                     View Live&nbsp;&nbsp;
                     <FaLink />
-                  </a>
+                  </ExternalLink>
                 </Btn>
               </div>
 
@@ -146,18 +165,24 @@ const Project = () => {
 
               <div className="link-wrapper">
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/netflix-clone">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/netflix-clone">
                     View Code&nbsp;&nbsp;
                     <AiFillGithub />
-                  </a>
+                  </ExternalLink>
 
                 </Btn>
 
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://clone-ca2ec.web.app/">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://clone-ca2ec.web.app/">
                     View Live&nbsp;&nbsp;
                     <FaLink />
-                  </a>
+                  </ExternalLink>
                 </Btn>
               </div>
 
@@ -172,18 +197,24 @@ const Project = () => {
 
               <div className="link-wrapper">
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/real-estate">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/real-estate">
                     View Code&nbsp;&nbsp;
                     <AiFillGithub />
-                  </a>
+                  </ExternalLink>
 
                 </Btn>
 
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://realestate-reactproject.netlify.app/">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://realestate-reactproject.netlify.app/">
                     View Live&nbsp;&nbsp;
                     <FaLink />
-                  </a>
+                  </ExternalLink>
                 </Btn>
               </div>
 
@@ -198,18 +229,24 @@ const Project = () => {
 
               <div className="link-wrapper">
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/eshop">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://github.com/Bivektamu/eshop">
                     View Code&nbsp;&nbsp;
                     <AiFillGithub />
-                  </a>
+                  </ExternalLink>
 
                 </Btn>
 
                 <Btn>
-                  <a target="_blank" rel="noreferrer" href="https://mobilestore-reactproject.netlify.app/">
+                  <ExternalLink
+                    onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}
+                    onMouseLeave={() => setSettings({ ...settings, cursor: '' })}
+                    target="_blank" rel="noreferrer" href="https://mobilestore-reactproject.netlify.app/">
                     View Live&nbsp;&nbsp;
                     <FaLink />
-                  </a>
+                  </ExternalLink>
                 </Btn>
               </div>
 

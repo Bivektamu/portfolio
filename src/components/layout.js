@@ -1,8 +1,8 @@
-import React, { createContext, useState, useMemo } from "react"
+import React, { createContext, useState, useMemo, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { normalize } from 'styled-normalize'
 
 import CustomCursor from '../components/customCursor'
@@ -14,7 +14,39 @@ const Layout = ({ children }) => {
   const [settings, setSettings] = useState({
     cursor: '',
     loading: true,
+    theme: localStorage.getItem('theme'),
   })
+
+  const { theme } = settings
+
+
+  useEffect(() => {
+
+
+
+    if (!(theme)) {
+      localStorage.setItem('theme', 'light')
+      setSettings({ ...settings, theme: localStorage.getItem('theme') })
+    }
+    else {
+      localStorage.setItem('theme', theme)
+    }
+  }, [theme])
+
+  const darkTheme = {
+    color: '#fff',
+    background: '#24292F',
+    boxShadow: '0px 10px 30px rgb(0 0 0 / 50%)'
+
+  }
+
+
+  const lightTheme = {
+    background: '#fff',
+    color: '#24292F',
+    boxShadow: '0px 10px 30px rgb(57 56 61 / 21%)'
+
+  }
 
   const value = useMemo(
     () => ({ settings, setSettings }),
@@ -36,11 +68,13 @@ const Layout = ({ children }) => {
 
     body {
       font-family:'Poppins';
-      background: #fff;
+      /* background: #fff; */
+      background: ${props => props.theme.background};
       margin:0;
       font-weight: 400;
       font-size: 1.6rem;
-      color:#777777;
+      /* color:#777777; */
+      color: ${props => props.theme.color};
       line-height: 1.4;
     }
     
@@ -49,7 +83,7 @@ const Layout = ({ children }) => {
       margin: 0;
       margin-bottom: 10px;
       line-height:1.2;
-      color:#212529;
+      color:${props => props.theme.color};
     }
 
     .grid__4 {
@@ -61,17 +95,20 @@ const Layout = ({ children }) => {
     }
     `
 
-  // console.clear()
   return (
-    <GlobalContext.Provider value={value}>
-      <GlobalStyles />
-      <Header />
-      <CustomCursor />
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <GlobalContext.Provider value={value}>
 
-      <main>{children}</main>
+        <GlobalStyles />
+        <Header />
+        <CustomCursor />
 
-    </GlobalContext.Provider>
+        <main>{children}</main>
+      </GlobalContext.Provider>
+    </ThemeProvider>
+
   )
+
 }
 
 Layout.propTypes = {

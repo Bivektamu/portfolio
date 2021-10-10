@@ -6,16 +6,22 @@ export const Cursor = styled.div`
     height:20px;
     border-radius: 100%;
     background:none;
-    border: 1px solid #141313;
+    border: 2px solid #141313;
     position: fixed;
     pointer-events: none;
     z-index: 99;
     transform: translate(-50%, -50%);
     /* transform: scale(2) */
-    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.2s linear;
+    transition-property: width, height, border;
+    will-change:  width, height, border;
+
     &.hovered {
-        width: 50px;
-        height:50px;
-        border-width: 2px;
+        width:40px;
+        height:40px;
+        border-width: 4px;
+    }
+    &.border__red {
+        border-color: red;
     }
 `

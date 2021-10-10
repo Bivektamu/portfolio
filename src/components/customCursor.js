@@ -14,7 +14,9 @@ const CustomCursor = () => {
 
         function mousePosition(e) {
             // console.log(e.clientX, e.clientY)
-            setCordPos({ x: e.clientX, y: e.clientY })
+            setTimeout(() => {
+                setCordPos({ x: e.clientX, y: e.clientY })
+            }, 150);
         }
 
         return () => { window.removeEventListener('mousemove', mousePosition) }

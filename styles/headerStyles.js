@@ -7,11 +7,11 @@ export const HeaderWrapper = styled.header`
     left:0;
     top:0;
     right:0;
-    background:#fff;
+    background:${props => props.theme.background};
     z-index:9;
 
     &.fixed {
-      box-shadow: 0px 10px 30px rgba(57, 56, 61, 0.205);
+      box-shadow: ${props => props.theme.boxShadow};
     }
 
     &>div {
@@ -28,7 +28,7 @@ export const Logo = styled.div`
   a {
     font-size:1.8rem;
     font-weight: 800;
-    color: #000;
+    color: ${props => props.theme.color};
   }
   span {
     height: 1rem;
@@ -63,7 +63,7 @@ export const NavMenu = styled.nav`
       a {
         text-transform: uppercase;
         line-height: 1;
-        color: #141313;
+        color: ${props => props.theme.color};
         font-size: 1.5rem;
         font-weight: 500;
         &:hover {

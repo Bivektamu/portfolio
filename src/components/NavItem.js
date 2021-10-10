@@ -7,9 +7,7 @@ const NavItem = ({ anchorTo, index, max }) => {
     const { settings, setSettings } = useContext(GlobalContext)
 
     useEffect(() => {
-        console.log(index)
-        console.log(max)
-        if (index = max - 1) {
+        if (index === max - 1) {
             setSettings({ ...settings, loading: false })
         }
 
@@ -33,9 +31,8 @@ const NavItem = ({ anchorTo, index, max }) => {
         });
     }
 
-
     return (
-        <li className={anchorTo === 'home' && "active"}>
+        <li className={(anchorTo === 'home') ? "active" : ''}>
 
             <Link to={`#${anchorTo}`} className="nav-link" data-anchor={anchorTo} onClick={(e) => onClick(e)}
                 onMouseEnter={() => setSettings({ ...settings, cursor: 'hovered' })}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import PropTypes from "prop-types"
 
 import { FaMobileAlt } from "@react-icons/all-files/fa/FaMobileAlt";
@@ -10,6 +10,8 @@ import { Link } from "gatsby"
 
 import NavItem from './NavItem'
 
+import GlobalContext from '../context'
+
 
 
 const Header = () => {
@@ -19,6 +21,8 @@ const Header = () => {
 
 
   const [sections, setSections] = useState([])
+
+  const { settings, setSettings } = useContext(GlobalContext)
 
   useEffect(() => {
 
@@ -61,6 +65,12 @@ const Header = () => {
     })
   }
 
+  function changeTheme() {
+    console.log('a')
+    const { theme } = settings
+    setSettings({ ...settings, theme: theme === 'light' ? 'dark' : 'light' })
+  }
+
   return (
     <HeaderWrapper id="header" className={`${'header ' + clsnme}`} >
 
@@ -68,9 +78,17 @@ const Header = () => {
         <Logo>
           <Link to='/'>BIV</Link>
 
-          <span></span>
+          <span onMouseEnter={() => { setSettings({ ...settings, cursor: 'hovered border__red' }) }}
+            onMouseLeave={() => {
+              setSettings({
+                ...settings, cursor: ''
+              })
+            }}
+            onClick={() => changeTheme()}
+          >
+          </span>
 
-          <Link to='/'>EK</Link>
+          < Link to='/' > EK</Link>
         </Logo>
 
         {/* <button classname="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
