@@ -1,13 +1,8 @@
 import styled from "styled-components";
 
 export const ContactSection = styled.section`
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-    align-items: center;
     background-position: left 50%!important;
     background-repeat: no-repeat!important;
-    height: calc(100vh - 6rem);
     padding:0;
 
     h2 {

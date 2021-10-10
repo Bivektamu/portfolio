@@ -50,6 +50,10 @@ export const NavMenu = styled.nav`
   margin:0;
   margin-left: auto;
 
+  @media screen and (max-width: 1100px) {
+    width: 550px;
+  }
+
   ul {
     display:flex;
     justify-content: space-between;

@@ -21,9 +21,6 @@ const Layout = ({ children }) => {
 
 
   useEffect(() => {
-
-
-
     if (!(theme)) {
       localStorage.setItem('theme', 'light')
       setSettings({ ...settings, theme: localStorage.getItem('theme') })
@@ -33,17 +30,19 @@ const Layout = ({ children }) => {
     }
   }, [theme])
 
+
+
   const darkTheme = {
     color: '#fff',
     background: '#24292F',
-    boxShadow: '0px 10px 30px rgb(0 0 0 / 50%)'
-
+    boxShadow: '0px 10px 30px rgb(0 0 0 / 50%)',
+    borderColor: 'rgba(225, 225, 225, 0.1)'
   }
-
 
   const lightTheme = {
     background: '#fff',
     color: '#24292F',
+    borderColor: '#201f1f17',
     boxShadow: '0px 10px 30px rgb(57 56 61 / 21%)'
 
   }
@@ -92,7 +91,22 @@ const Layout = ({ children }) => {
 
     main {
       overflow:hidden;
+      padding-top: 106px
     }
+
+    section {
+      display: flex;
+    width: 100%;
+    min-height: calc(100vh - 106px);
+    align-items: center;
+    /* padding: 50px 0; */
+    padding: 0;
+    }
+
+    @media screen and (max-width: 1100px) {
+
+    }
+
     `
 
   return (

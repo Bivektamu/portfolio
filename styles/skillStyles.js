@@ -2,19 +2,13 @@ import styled from 'styled-components'
 
 
 export const SkillSection = styled.section`
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-    align-items: center;
-    padding: 50px 0;
-
     .flex__wrap {
         max-width: 800px
     }
     .single__brand {
-        /* border: 1px solid #201f1f17; */
-        border: 1px solid #fff;
-        background: #fff;
+        border: 1px solid ${props => props.theme.borderColor};
+        /* border: 1px solid #fff; */
+        /* background: #fff; */
         text-align: center;
         padding: 15px 0;
         margin: 20px 0;
@@ -37,9 +31,15 @@ export const SkillSection = styled.section`
 
     }
 
+    @media screen and (max-width: 1100px) {
+        .single__brand:hover {
+            transform: scale(1.05)
+        }
+    }
+
 `
 
-export const ExperienceWrapper = styled.section`
+export const ExperienceWrapper = styled.div`
     padding: 40px;
     background: #e029290a;
     width: 350px;

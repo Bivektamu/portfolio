@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 
 export const AboutSection = styled.section`
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    padding: 50px 0;
+    
+    @media screen and (max-width: 1100px) {
+        p {
+            width: 100%!important;
+        }
+    }
 
 `
