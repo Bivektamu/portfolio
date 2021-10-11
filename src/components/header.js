@@ -91,10 +91,9 @@ const Header = () => {
           < Link to='/' > EK</Link>
         </Logo>
 
-        {/* <button classname="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span classname="navbar-toggler-icon"></span>
-              </button> */}
+        <button id="nav__toggle" type="button">
+          <span></span>
+        </button>
 
         <NavMenu>
           <ul id="nav">

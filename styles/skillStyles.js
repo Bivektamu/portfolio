@@ -45,6 +45,9 @@ export const ExperienceWrapper = styled.div`
     width: 350px;
     display: block;
     margin-left:10vw;
+    @media screen and (max-width: 1000px) {
+        margin-left:0;
+    }
     /* margin-left: auto; */
     .years__area {
         margin-bottom: 100px;

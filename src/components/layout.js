@@ -87,6 +87,9 @@ const Layout = ({ children }) => {
 
     .grid__4 {
       width: calc(33.33% - 20px);
+      @media screen and (max-width: 1000px) {
+        width: calc(50% - 20px);
+    }
     }
 
     main {
@@ -103,10 +106,8 @@ const Layout = ({ children }) => {
     padding: 0;
     }
 
-    @media screen and (max-width: 1100px) {
-
-    }
-
+   
+   
     `
 
   return (

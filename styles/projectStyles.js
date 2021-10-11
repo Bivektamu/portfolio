@@ -5,6 +5,7 @@ export const ProjectSection = styled.section`
     .grid__4 {
         margin-bottom: 40px;
     }
+   
 
 `
 

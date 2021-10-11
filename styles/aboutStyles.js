@@ -7,6 +7,12 @@ export const AboutSection = styled.section`
         p {
             width: 100%!important;
         }
+
+        @media screen and (max-width: 1000px) {
+            .grid_6 {
+                width: 100%;
+            }
+        }
     }
 
 `

@@ -8,9 +8,20 @@ export const Container = styled.div`
   width: 1660px;
   max-width: calc(100% - 80px);
 
+  @media screen and (max-width: 760px) {
+    max-width: calc(100% - 30px);
+  }
+
   .grid__6 {
     width: 50%;
   }
+
+  @media screen and (max-width: 1000px) {
+      .grid__6 {
+        width: 100%;
+      }
+    }
+
 `
 
 
@@ -29,33 +40,37 @@ export const Flex = styled.div`
   &.align__top {
     align-items: flex-start;
   }
+
+  @media screen and (max-width: 1000px) {
+      flex-wrap: wrap
+    }
 `
 
-export const H1= styled.h1`
+export const H1 = styled.h1`
            font-size: 8rem;
       text-transform: uppercase;
       font-weight:700;
 `
 
 
-export const H2= styled.h2`
+export const H2 = styled.h2`
            font-size: 4rem;
       text-transform: uppercase;
       font-weight:700;
 `
 
 
-export const H3= styled.h3`
+export const H3 = styled.h3`
            font-size:5rem;
 `
 
-export const H4= styled.h4`
+export const H4 = styled.h4`
            font-size: 2.4rem;
       text-transform: uppercase;
       font-weight:700;
 `
 
-export const H5= styled.h5`
+export const H5 = styled.h5`
            font-size: 1.5rem;
       text-transform: uppercase;
       font-weight:700;

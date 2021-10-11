@@ -16,6 +16,10 @@ export const Cursor = styled.div`
     transition-property: width, height, border;
     will-change:  width, height, border;
 
+    @media screen and (max-width: 1000px) {
+        display:none;
+
+    }
     &.hovered {
         width:40px;
         height:40px;

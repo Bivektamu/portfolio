@@ -13,10 +13,12 @@ const CustomCursor = () => {
         window.addEventListener('mousemove', mousePosition)
 
         function mousePosition(e) {
-            // console.log(e.clientX, e.clientY)
-            setTimeout(() => {
-                setCordPos({ x: e.clientX, y: e.clientY })
-            }, 150);
+
+            if (window.innerWidth < 1001) {
+                setTimeout(() => {
+                    setCordPos({ x: e.clientX, y: e.clientY })
+                }, 150);
+            }
         }
 
         return () => { window.removeEventListener('mousemove', mousePosition) }
