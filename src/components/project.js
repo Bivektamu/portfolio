@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react"
 
 
-import { Btn, Container, Flex, H2, H5 } from "../../styles/globalStyles"
-import { ProjectSection, ImageWrapper } from "../../styles/projectStyles"
+import { Btn, Container, Flex, H2, H5 } from "../styles/globalStyles"
+import { ProjectSection, ImageWrapper } from "../styles/projectStyles"
 
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub"
 import { FaLink } from "@react-icons/all-files/fa/FaLink";

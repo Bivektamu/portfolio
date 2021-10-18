@@ -1,26 +1,33 @@
-import React, { createContext, useState, useMemo, useEffect } from "react"
+import React, { useState, useMemo, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { normalize } from 'styled-normalize'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyles } from '../styles/globalStyles'
 
 import CustomCursor from '../components/customCursor'
 
 import GlobalContext from "../context"
+
+
+
 
 const Layout = ({ children }) => {
 
   const [settings, setSettings] = useState({
     cursor: '',
     loading: true,
-    theme: localStorage.getItem('theme'),
+    theme: typeof window !== "undefined" ? localStorage.getItem('theme') || 'light' : 'light',
   })
 
   const { theme } = settings
 
 
   useEffect(() => {
+
+    console.log(theme)
+
+
     if (!(theme)) {
       localStorage.setItem('theme', 'light')
       setSettings({ ...settings, theme: localStorage.getItem('theme') })
@@ -51,135 +58,7 @@ const Layout = ({ children }) => {
     () => ({ settings, setSettings }),
     [settings]
   )
-  const GlobalStyles = createGlobalStyle`
 
-  ${normalize}  
-  * {
-      text-decoration: none;
-      /* cursor: none; */
-    }
-
-    html {
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-      font-size: 10px;
-    }
-
-    body {
-      font-family:'Poppins';
-      /* background: #fff; */
-      background: ${props => props.theme.background};
-      margin:0;
-      font-weight: 400;
-      font-size: 1.6rem;
-      /* color:#777777; */
-      color: ${props => props.theme.color};
-      line-height: 1.4;
-    }
-    
-    h1, h2, h3, h4, h5{
-      font-weight: 500;
-      margin: 0;
-      margin-bottom: 10px;
-      line-height:1.2;
-      color:${props => props.theme.color};
-    }
-
-    .grid__4 {
-      width: calc(33.33% - 20px);
-      @media screen and (max-width: 1000px) {
-        width: calc(50% - 20px);
-    }
-    }
-
-    main {
-      overflow:hidden;
-      padding-top: 106px
-    }
-
-    section {
-      display: flex;
-      width: 100%;
-      min-height: calc(100vh - 106px);
-      align-items: center;
-      padding: 0;
-      
-    }
-
-    .mob {
-      display:none!important;
-    }
-
-    .hvr-buzz-out:hover svg{
-      animation-name: hvr-buzz-out;
-      animation-duration: 0.75s;
-      animation-timing-function: linear;
-      animation-iteration-count: 1;
-    }
-
-    @keyframes hvr-buzz-out {
-      0% {
-          transform: translateX(3px) rotate(2deg);
-      }
-      20% {
-          transform: translateX(-3px) rotate(-2deg);
-      }
-      30% {
-          transform: translateX(3px) rotate(2deg);
-      }
-      40% {
-          transform: translateX(-3px) rotate(-2deg);
-      }
-      50% {
-          transform: translateX(2px) rotate(1deg);
-      }
-      60% {
-          transform: translateX(-2px) rotate(-1deg);
-      }
-      70% {
-          transform: translateX(2px) rotate(1deg);
-      }
-      80% {
-          transform: translateX(-2px) rotate(-1deg);
-      }
-      90% {
-          transform: translateX(1px) rotate(0);
-      }
-      100% {
-          transform: translateX(-1px) rotate(0);
-      }
-
-    }
-
-
-    @media screen and (max-width: 760px) {
-      main section:not(:last-of-type)  {
-        margin-bottom: 60px;
-      }
-
-      .grid__4 {
-        width: 100%;
-      }
-
-      .desk {
-        display:none!important
-      }
-
-      .mob {
-        display: block!important
-      }
-
-      .mob#mob-tel {
-        position: absolute;
-        right: 50px;
-        font-size: 2rem;
-        color: ${props => props.theme.color};
-        
-      }
-
-    }
-
-`
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>

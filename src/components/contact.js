@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useContext } from "react"
 
-import { ContactSection } from '../../styles/contactStyles'
-import { Container, H2 } from '../../styles/globalStyles'
+import { ContactSection } from '../styles/contactStyles'
+import { Container, H2 } from '../styles/globalStyles'
 import footerBg from '../images/footer-bg.png'
 
 import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook'
-import { Link } from 'gatsby'
 import { SiGmail } from '@react-icons/all-files/si/SiGmail'
 import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin'
 import { FaGithub } from '@react-icons/all-files/fa/FaGithub'
@@ -17,7 +16,7 @@ import GlobalContext from "../context"
 const Contact = () => {
 
     const [flag, setflag] = useState(false)
-    const { settings, setSettings } = useContext(GlobalContext)
+    const { settings } = useContext(GlobalContext)
 
     const { loading } = settings
 

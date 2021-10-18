@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react"
 
-import { Container, Flex, H1, H3, H4, Btn } from "../../styles/globalStyles"
-import { BannerSection } from "../../styles/bannerStyles"
+import { Container, Flex, H1, H3, H4, Btn } from "../styles/globalStyles"
+import { BannerSection } from "../styles/bannerStyles"
 
 import { StaticImage } from "gatsby-plugin-image"
 

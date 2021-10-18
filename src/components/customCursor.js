@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 
-import { Cursor } from '../../styles/cursorStyles'
+import { Cursor } from '../styles/cursorStyles'
 
 import GlobalContext from '../context'
 

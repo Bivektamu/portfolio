@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react"
 
-import { Container, Flex, H2 } from "../../styles/globalStyles"
-import { AboutSection } from "../../styles/aboutStyles"
+import { Container, Flex, H2 } from "../styles/globalStyles"
+import { AboutSection } from "../styles/aboutStyles"
 
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -12,7 +12,7 @@ const About = () => {
 
   const [flag, setflag] = useState(false)
 
-  const { settings, setSettings } = useContext(GlobalContext)
+  const { settings } = useContext(GlobalContext)
   const { loading } = settings
 
   useEffect(() => {

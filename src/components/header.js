@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 
 import { FaMobileAlt } from "@react-icons/all-files/fa/FaMobileAlt";
 
-import { Container } from "../../styles/globalStyles"
-import { HeaderWrapper, Logo, NavMenu } from "../../styles/headerStyles"
+import { Container } from "../styles/globalStyles"
+import { HeaderWrapper, Logo, NavMenu } from "../styles/headerStyles"
 
 import { Link } from "gatsby"
 
@@ -77,7 +77,6 @@ const Header = () => {
     openCls = ''
   }
 
-  console.log(openCls, clsnme)
 
   return (
     <HeaderWrapper id="header" className={`${'header ' + clsnme + ' ' + openCls}`} >
