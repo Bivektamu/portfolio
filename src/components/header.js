@@ -18,6 +18,7 @@ const Header = () => {
 
 
   const [clsnme, setClsnme] = useState('');
+  const [activeNav, setActiveNav] = useState(false);
 
 
   const [sections, setSections] = useState([])
@@ -30,25 +31,23 @@ const Header = () => {
 
     setSections(Array.prototype.slice.call(secs))
 
-
     document.addEventListener('scroll', scrolling)
-
-    function scrolling() {
-      if (window.scrollY > 0) {
-        setClsnme('fixed')
-      }
-      else {
-        setClsnme('')
-      }
-
-    }
 
     return () => {
       window.removeEventListener('scroll', scrolling)
-
     }
   }, [])
 
+
+  function scrolling() {
+    if (window.scrollY > 0) {
+      setClsnme('fixed')
+    }
+
+    else {
+      setClsnme('')
+    }
+  }
 
 
   let navItem;
@@ -57,7 +56,7 @@ const Header = () => {
       const secId = (sec.getAttribute('id'))
       if (secId) {
 
-        return <NavItem key={index} index={index} max={sections.length} anchorTo={secId} />
+        return <NavItem key={index} index={index} max={sections.length} anchorTo={secId} setActiveNav={() => setActiveNav()} activeNav={activeNav} />
       }
       else {
         return ''
@@ -66,13 +65,22 @@ const Header = () => {
   }
 
   function changeTheme() {
-    console.log('a')
     const { theme } = settings
     setSettings({ ...settings, theme: theme === 'light' ? 'dark' : 'light' })
   }
 
+  let openCls = ''
+  if (activeNav) {
+    openCls = 'active__nav'
+  }
+  else {
+    openCls = ''
+  }
+
+  console.log(openCls, clsnme)
+
   return (
-    <HeaderWrapper id="header" className={`${'header ' + clsnme}`} >
+    <HeaderWrapper id="header" className={`${'header ' + clsnme + ' ' + openCls}`} >
 
       <Container>
         <Logo>
@@ -91,14 +99,18 @@ const Header = () => {
           < Link to='/' > EK</Link>
         </Logo>
 
-        <button id="nav__toggle" type="button">
+        <a className="nav-link hvr-buzz-out tel mob" id="mob-tel" href="tel:+61452424565">
+          <FaMobileAlt />
+        </a>
+
+        <button id="nav__toggle" type="button" onClick={() => setActiveNav(!activeNav)}>
           <span></span>
         </button>
 
         <NavMenu>
           <ul id="nav">
             {navItem && navItem}
-            <li>
+            <li className="desk">
               <a className="nav-link hvr-buzz-out tel" id="mob-tel" href="tel:+61452424565">
                 <FaMobileAlt />
               </a>

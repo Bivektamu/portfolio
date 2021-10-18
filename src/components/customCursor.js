@@ -14,7 +14,7 @@ const CustomCursor = () => {
 
         function mousePosition(e) {
 
-            if (window.innerWidth < 1001) {
+            if (window.innerWidth > 999) {
                 setTimeout(() => {
                     setCordPos({ x: e.clientX, y: e.clientY })
                 }, 150);

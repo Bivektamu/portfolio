@@ -37,16 +37,28 @@ export const SkillSection = styled.section`
         }
     }
 
+    @media screen and (max-width: 760px) {
+        .single__brand {
+            margin-left:auto;
+            margin-right:auto;
+        }
+    }
+
 `
 
 export const ExperienceWrapper = styled.div`
     padding: 40px;
     background: #e029290a;
     width: 350px;
+    max-width: 100%;
     display: block;
     margin-left:10vw;
     @media screen and (max-width: 1000px) {
         margin-left:0;
+    }
+
+    @media screen and (max-width: 760px) {
+        padding:40px 20px;
     }
     /* margin-left: auto; */
     .years__area {

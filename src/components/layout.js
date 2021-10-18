@@ -99,16 +99,87 @@ const Layout = ({ children }) => {
 
     section {
       display: flex;
-    width: 100%;
-    min-height: calc(100vh - 106px);
-    align-items: center;
-    /* padding: 50px 0; */
-    padding: 0;
+      width: 100%;
+      min-height: calc(100vh - 106px);
+      align-items: center;
+      padding: 0;
+      
     }
 
-   
-   
-    `
+    .mob {
+      display:none!important;
+    }
+
+    .hvr-buzz-out:hover svg{
+      animation-name: hvr-buzz-out;
+      animation-duration: 0.75s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+    }
+
+    @keyframes hvr-buzz-out {
+      0% {
+          transform: translateX(3px) rotate(2deg);
+      }
+      20% {
+          transform: translateX(-3px) rotate(-2deg);
+      }
+      30% {
+          transform: translateX(3px) rotate(2deg);
+      }
+      40% {
+          transform: translateX(-3px) rotate(-2deg);
+      }
+      50% {
+          transform: translateX(2px) rotate(1deg);
+      }
+      60% {
+          transform: translateX(-2px) rotate(-1deg);
+      }
+      70% {
+          transform: translateX(2px) rotate(1deg);
+      }
+      80% {
+          transform: translateX(-2px) rotate(-1deg);
+      }
+      90% {
+          transform: translateX(1px) rotate(0);
+      }
+      100% {
+          transform: translateX(-1px) rotate(0);
+      }
+
+    }
+
+
+    @media screen and (max-width: 760px) {
+      main section:not(:last-of-type)  {
+        margin-bottom: 60px;
+      }
+
+      .grid__4 {
+        width: 100%;
+      }
+
+      .desk {
+        display:none!important
+      }
+
+      .mob {
+        display: block!important
+      }
+
+      .mob#mob-tel {
+        position: absolute;
+        right: 50px;
+        font-size: 2rem;
+        color: ${props => props.theme.color};
+        
+      }
+
+    }
+
+`
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>

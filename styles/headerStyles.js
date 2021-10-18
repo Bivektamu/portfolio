@@ -21,7 +21,31 @@ export const HeaderWrapper = styled.header`
 
   #nav__toggle {
     display: none;
+    
+
   }
+
+  &.active__nav #nav__toggle {
+      span {
+        background:none;
+        &:before, &:after {
+          transform: rotate(45deg);
+          top:0;
+        }
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    &.active__nav nav {
+      opacity: 1;
+      visibility: visible;
+      
+      &:after {
+        transform: scale(1);
+      }
+    }
 
   @media screen and (max-width: 760px) {
       padding: 15px 0;
@@ -37,6 +61,21 @@ export const HeaderWrapper = styled.header`
           outline: none;
           background:transparent;
           border:none;
+          z-index: 9;
+          &:after {
+            background:#854fee;
+            width: 10px;
+            height: 10px;
+            content: "";
+            position: fixed;
+            border-radius: 100%;
+            top: -5px;
+            right: 5px;
+            transform: scale(11);
+            z-index: -1;
+            
+          }
+
           span {
             position: absolute;
             left:0;
@@ -54,6 +93,7 @@ export const HeaderWrapper = styled.header`
               margin: auto;
               width: 100%;
               height: 2px;
+              transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
               background: ${props => props.theme.color};
             }
             &:after {
@@ -65,18 +105,7 @@ export const HeaderWrapper = styled.header`
       }
     }
 
-    &.active__nav #nav__toggle {
-      span {
-        background:none;
-        &:before, &:after {
-          transform: rotate(45deg);
-          top:0;
-        }
-        &:after {
-          transform: rotate(-45deg);
-        }
-      }
-    }
+    
 
 `
 
@@ -113,7 +142,6 @@ export const NavMenu = styled.nav`
   width: 600px;
   margin:0;
   margin-left: auto;
-
 
   ul {
     display:flex;
@@ -163,7 +191,44 @@ export const NavMenu = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: #fff; */
+    /* opacity:0; */
+    visibility: hidden;
+    /* transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1); */
+
+    &:after {
+      content:'';
+      position: fixed;
+      right:-120vh;
+      top:-120vh;
+      z-index:-1;
+      margin:auto;
+      width: 240vh;
+      height: 240vh;
+      border-radius: 100%;
+      background:#854fee;
+      transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transform: scale(0);
+    }
+    ul {
+      width: 100%;
+      flex-direction: column;
+      flex-wrap: wrap;
+      li {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+        a {
+          font-size: 3rem;
+          color:${props => props.theme.background}
+        }
+
+        &.active a {
+          color:${props => props.theme.color}
+        }
+
+      }
+    }
 
   }
 

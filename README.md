@@ -7,8 +7,7 @@
   Bivek Jang Gurung | Portfolio
 </h1>
 
-This is my portfolio site. This project is under development.
-
+This is my portfolio site. Web technology includes React, Context API, Styled Component, Gatsby js, Sass, CSS3, HTML5, JavaScript, ES6, and git.
 
 ## App Info
 
@@ -23,4 +22,3 @@ Bivek Jang Gurung
 ### License
 
 This project is licensed under BSD Zero Clause License (0BSD)
-

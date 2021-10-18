@@ -16,6 +16,9 @@ export const ContactSection = styled.section`
         font-size:25px;
         margin: 4rem;
         color: #212529;
+        @media screen and (max-width: 760px) {
+            margin: 4rem 2rem;
+        }
     }
 
     .fb:hover svg{

@@ -3,7 +3,7 @@ import GlobalContext from "../context"
 import { Link } from "gatsby"
 
 
-const NavItem = ({ anchorTo, index, max }) => {
+const NavItem = ({ anchorTo, index, max, activenav, setActiveNav }) => {
     const { settings, setSettings } = useContext(GlobalContext)
 
     useEffect(() => {
@@ -23,6 +23,7 @@ const NavItem = ({ anchorTo, index, max }) => {
 
         const sec = document.getElementById(anchor)
 
+        setActiveNav(!activenav)
 
         window.scrollTo({
             top: sec.offsetTop - document.getElementById('header').getBoundingClientRect().height,
